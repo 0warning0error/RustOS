@@ -1,0 +1,9 @@
+[build]
+# 设置编译目标是riscv64
+target = "riscv64gc-unknown-none-elf"
+
+ [target.riscv64gc-unknown-none-elf]
+# 设置链接脚本，强制打开帧指针 
+rustflags = [
+     "-Clink-arg=-Tsrc/linker.ld", "-Cforce-frame-pointers=yes"
+ ]
